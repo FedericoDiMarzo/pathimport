@@ -25,13 +25,13 @@ Let's suppose to have a python project with the following structure.
 Inside `common.py` we have defined the following function,
 ```python
 def fun_common():
-	# do things...
+    # do things...
 ```
 
 while in `script_a.py` we have defined the following.
 ```python
 def fun_a():
-	# do things...
+    # do things...
 ```
 
 To avoid the usage of relative imports, pathimport can be used to load these functions inside `script_b.py`.
@@ -46,8 +46,8 @@ from common import fun_common
 from submodule_a import fun_a
 
 if __name__ == "__main__":
-	fun_common()
-	fun_a()
+    fun_common()
+    fun_a()
 ```
 
 Optionally, the module/project name can be used as a prefix.
