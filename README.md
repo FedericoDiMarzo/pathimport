@@ -61,7 +61,7 @@ from module.submodule_a import fun_a
 ```
 
 # Under The Hood #
-To resolve the interpreter import ambiguities, the `set_module_root` of pathimport modifies the `PATH` environment variable to point to the module root (or to the preceding directory if *prefix* is set to *True*). For this reason, the interpreter will be able to correctly localize and import your scripts from the filesystem, without additional problems that can arise depending on the current working directory, or if the source code is launched as a script or as a module.
+To resolve the interpreter import ambiguities, `set_module_root` of pathimport modifies the `PATH` environment variable to point to the module root (or to the preceding directory if *prefix* is set to *True*). For this reason, the interpreter will be able to correctly localize and import your scripts from the filesystem, without additional problems that can arise depending on the current working directory, or if the source code is launched as a script or as a module.
 
 ### Additional Resources ###
 * [Stack Overflow question on relative imports](https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time)
