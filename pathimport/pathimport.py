@@ -23,7 +23,7 @@ def set_module_root(relative_path: str, prefix: bool = False) -> None:
     relative_path = caller_path.parent / Path(relative_path)
     
     if prefix:
-        relative_path = relative_path.parent
+        relative_path = relative_path.resolve().parent
 
     # adding the module to PATH
     sys.path.append(str(relative_path))
