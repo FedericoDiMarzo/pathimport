@@ -3,7 +3,7 @@ import inspect
 from pathlib import Path
 
 
-def set_module_root(relative_path: str, prefix: bool = False) -> None:
+def set_module_root(relative_path: str, prefix: bool = True) -> None:
     """
     Add a module to a path to enable relative imports.
 
@@ -13,7 +13,7 @@ def set_module_root(relative_path: str, prefix: bool = False) -> None:
         Relative path to the root of the module
     prefix : bool
         If True the name of the module/project should
-        be prepended for each internal import.
+        be prepended for each internal import, by default True.
     """
     # checking the function stack to obtain the
     # caller Path
@@ -25,5 +25,5 @@ def set_module_root(relative_path: str, prefix: bool = False) -> None:
     if prefix:
         relative_path = relative_path.resolve().parent
 
-    # adding the module to PATH
-    sys.path.append(str(relative_path))
+    # prepending the module to PATH
+    sys.path = [str(relative_path)] + sys.path
